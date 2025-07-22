@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Residuos Urbanos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 5px 10px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    header {
+      background-image: url('GestionResiduosUrbanos.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: white;
+      padding: 150px 20px 100px;
+      text-align: center;
+      position: relative;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.4);
+    }
+
+    header h1 {
+      position: relative;
+      margin: 0;
+      font-size: 3rem;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+      z-index: 1;
+    }
+
+    header p {
+      position: relative;
+      font-size: 1.2rem;
+      margin-top: 10px;
+      z-index: 1;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-in-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      flex: 1 1 300px;
+    }
+
+    .card .content {
+      flex: 1 1 300px;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    section[id]::before {
+      content: "";
+      display: block;
+      height: 60px;
+      margin-top: -60px;
+      visibility: hidden;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      nav {
+        flex-direction: column;
+      }
+
+      .card {
+        flex-direction: column;
+      }
+
+      .card img,
+      .card .content {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+    <nav>
+        <a href="#depositados">Residuos Bien Depositados</a>
+        <a href="#no-reciclan">Residuos No Reciclables</a>
+        <a href="#reutilizacion">Reutilización</a>
+        <a href="#conceptos">Conceptos</a>
+        <a href="#3r">3R</a>
+        <a href="#peligrosos">Peligrosos</a>
+        <a href="#situacion">Caso Real</a>
+        <a href="#conclusion">Conclusión</a>
+      </nav>
+    
+
+  <header>
+    <h1>Gestión de Residuos Urbanos</h1>
+  </header>
+
+  <section id="situacion" class="card">
+    <!-- Cambia la ruta por la ubicación real del archivo si es necesario -->
+    <img src="contenendoresbase.jpg" alt="Estado actual de los contenedores">
+    <div class="content">
+      <h2>Caso real: punto de contenedores en la base</h2>
+      <p>La imagen muestra un conjunto de contenedores de <strong>envases</strong> (amarillos), <strong>papel y cartón</strong> (azul) y <strong>resto/orgánico</strong> (grises y marrones). A pesar de contar con la infraestructura adecuada para la separación, hay varios problemas identificables a simple vista:</p>
+      <ul>
+        <li><strong>Sobrecarga:</strong> Algunos contenedores están llenos hasta desbordar, con bolsas depositadas encima.</li>
+        <li><strong>Residuos fuera del contenedor:</strong> Se observa basura en el suelo, lo que indica mala praxis o recogida insuficiente.</li>
+        <li><strong>Contaminación de fracciones:</strong> Si los residuos se mezclan al estar sobrecargados, el reciclaje pierde eficacia.</li>
+      </ul>
+      
+    </div>
+  </section>
+
+  <!-- Secciones originales -->
+  <section id="depositados" class="card">
+    <img src="contenedoresjpg.jpg" alt="Contenedores">
+    <div class="content">
+      <h2>¿Están bien depositados los residuos?</h2>
+      <ul>
+        <li><strong>Amarillo:</strong> Plásticos, latas y bricks</li>
+        <li><strong>Azul:</strong> Papel y cartón</li>
+        <li><strong>Verde:</strong> Vidrio</li>
+        <li><strong>Marrón:</strong> Orgánico</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="no-reciclan" class="card">
+    <img src="Residuos.jpg" alt="Residuos incorrectos">
+    <div class="content">
+      <h2>Residuos que no se reciclan y soluciones</h2>
+      <ul>
+        <li><strong>Toallitas húmedas:</strong> Evitar o gestionar como residuo especial</li>
+        <li><strong>Juguetes rotos:</strong> Donar o llevar al punto limpio</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="reutilizacion" class="card">
+    <img src="Reciclajejardinería.jpg" alt="Reutilización">
+    <div class="content">
+      <h2>Reutilización de materiales </h2>
+      <ul>
+        <li>Césped artificial: alfombrillas o aislante</li>
+        <li>Tuberías de riego: estructuras de jardinería</li>
+        <li>Ropa vieja: trapos o manualidades</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="conceptos" class="card">
+    <img src="gestion.jpg" alt="Gestión">
+    <div class="content">
+      <h2>Conceptos clave</h2>
+      <ul>
+        <li><strong>Residuo:</strong> Material descartado</li>
+        <li><strong>Subproducto:</strong> Resultado secundario útil</li>
+        <li><strong>Fin de la condición de residuo:</strong> Se transforma en producto</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="3r" class="card">
+    <img src="Las3r.jpg" alt="3R">
+    <div class="content">
+      <h2>Estrategia de las 3R</h2>
+      <ul>
+        <li><strong>Reducir:</strong> Menos consumo, más eficiencia</li>
+        <li><strong>Reutilizar:</strong> Alargar la vida de los objetos</li>
+        <li><strong>Reciclar:</strong> Transformar para nuevos usos</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="peligrosos" class="card">
+    <img src="Puntolimpio.jpg" alt="Punto limpio">
+    <img src="residuospeligrosos.png" alt="Residuos peligrosos">
+    <div class="content">
+      <h2>¿Qué es un residuo peligroso?</h2>
+      <ul>
+        <li>Aceites usados</li>
+        <li>Pilas</li>
+        <li>Medicamentos caducados</li>
+        <li>Productos tóxicos</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="conclusion" class="card">
+    <img src="Conciencia.jpg" alt="Conciencia ambiental">
+    <div class="content">
+      <h2>Conclusión</h2>
+      <p>Separar, reutilizar y comprender los residuos es fundamental para cuidar nuestro entorno y promover un futuro con menos Contaminación.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Trabajo sobre Residuos Urbanos</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const revealOnScroll = () => {
+      const trigger = window.innerHeight * 0.85;
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < trigger) sec.classList.add('visible');
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+</body>
+</html>
